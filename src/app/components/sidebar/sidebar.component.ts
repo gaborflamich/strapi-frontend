@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Output } from '@angular/core';
 import { JobsService } from 'src/app/services/jobs.service';
-import { map } from 'rxjs';
 import { FilterPipe } from 'src/app/pipes/filter.pipe';
 
 @Component({
@@ -48,9 +47,9 @@ export class SidebarComponent {
     );
   }
 
-  // @Output() categorySelected = new EventEmitter<string>();
+  @Output() categorySelected = new EventEmitter<string>();
 
-  // selectCategory(category: string) {
-  //   this.categorySelected.emit(category);
-  // }
+  selectCategory(categoryName: string): void {
+    this.categorySelected.emit(categoryName);
+  }
 }

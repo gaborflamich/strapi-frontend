@@ -4,11 +4,14 @@
       <h4>Kategória</h4>
       <hr />
       <ul class="nav nav-pills flex-column mb-auto">
+        <li class="nav-item">
+          <a href="http://localhost:4200/" class="nav-link text-white">All</a>
+        </li>
         <li *ngFor="let category of categories" class="nav-item">
           <a
             href="#"
             class="nav-link text-white"
-            (click)="selectCategory(category.Name)"
+            (click)="selectCategory(category.Name); $event.preventDefault()"
           >
             {{ category.Name }}
           </a>

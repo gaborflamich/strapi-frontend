@@ -1,5 +1,8 @@
 <div class="cards">
-  <div class="card bg-dark text-white" *ngFor="let job of jobs">
+  <div
+    class="card bg-dark text-white"
+    *ngFor="let job of jobs | filter : selectedCategory"
+  >
     <h2>{{ job.attributes.Title }}</h2>
     <p>{{ job.attributes.Description }}</p>
     <ul>
