@@ -1,0 +1,25 @@
+<div class="cards">
+  <div class="card bg-dark text-white" *ngFor="let job of jobs">
+    <h2>{{ job.attributes.Title }}</h2>
+    <p>{{ job.attributes.Description }}</p>
+    <ul>
+      <li>{{ job.attributes.category.data.attributes.Name }}</li>
+      <li>{{ job.attributes.city.data.attributes.Name }}</li>
+      <li>{{ job.attributes.company.data.attributes.Name }}</li>
+    </ul>
+    <div *ngFor="let block of job.attributes.Content" class="d-none">
+      <ng-container [ngSwitch]="block.type">
+        <h2 *ngSwitchCase="'heading'">
+          {{ getText(block) }}
+        </h2>
+        <p *ngSwitchCase="'paragraph'" [innerHTML]="getText(block)"></p>
+        <ul
+          *ngSwitchCase="'list'"
+          [class.unordered]="block.format === 'unordered'"
+        >
+          <li *ngFor="let item of block.children">{{ getText(item) }}</li>
+        </ul>
+      </ng-container>
+    </div>
+  </div>
+</div>

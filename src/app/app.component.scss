@@ -1,0 +1,7 @@
+.sidebar-content {
+  display: grid;
+  grid-template-columns: 2fr 6fr;
+  gap: 30px;
+}
+
+$shadow: 0 0 1.25rem rgba(20, 32, 50, 0.1);

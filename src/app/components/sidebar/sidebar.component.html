@@ -1,0 +1,43 @@
+<aside class="sidebar border border-right">
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark">
+    <div class="sidebar-block">
+      <h4>Kategória</h4>
+      <hr />
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li *ngFor="let category of categories" class="nav-item">
+          <a
+            href="#"
+            class="nav-link text-white"
+            (click)="selectCategory(category.Name)"
+          >
+            {{ category.Name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block">
+      <h4>Város</h4>
+      <hr />
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li *ngFor="let city of cities">
+          <a href="#" class="nav-link text-white">
+            {{ city.Name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="sidebar-block">
+      <h4>Cég</h4>
+      <hr />
+      <ul class="nav nav-pills flex-column mb-auto">
+        <li *ngFor="let company of companies">
+          <a href="#" class="nav-link text-white">
+            {{ company.Name }}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
